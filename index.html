@@ -1,354 +1,112 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Rasna Kumai – Senior Documentation Specialist</title>
-<meta name="description" content="Senior documentation specialist with 10+ years of experience writing and maintaining documentation for enterprise SaaS products.">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📄</text></svg>">
+<meta name="description" content="Rasna Kumai — Senior Technical Writer and Documentation Specialist with 10+ years of experience in enterprise software documentation, content quality, and Docs as Code.">
+<meta name="theme-color" content="#f6f4ef">
+<title>Rasna Kumai | Technical Writing & Documentation</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
 <style>
-  :root {
-    --bg: #f7f8fa;
-    --surface: #ffffff;
-    --ink: #1b1f2a;
-    --muted: #5b6475;
-    --line: #e3e6ec;
-    --accent: #3b5bdb;
-    --accent-soft: #e7ecfc;
-    --sans: "Manrope", system-ui, -apple-system, "Segoe UI", sans-serif;
-    --mono: "JetBrains Mono", ui-monospace, Menlo, Consolas, monospace;
-  }
-  @media (prefers-color-scheme: dark) {
-    :root {
-      --bg: #14171f;
-      --surface: #1b1f2a;
-      --ink: #eceff5;
-      --muted: #98a1b3;
-      --line: #2a3040;
-      --accent: #8da2fb;
-      --accent-soft: #232a45;
-    }
-  }
-  * { box-sizing: border-box; }
-  html { scroll-behavior: smooth; }
-  body {
-    margin: 0;
-    background: var(--bg);
-    color: var(--ink);
-    font-family: var(--sans);
-    font-size: 1.0625rem;
-    line-height: 1.65;
-    -webkit-font-smoothing: antialiased;
-  }
-  a { color: var(--accent); text-underline-offset: 3px; }
-  a:focus-visible, button:focus-visible {
-    outline: 2px solid var(--accent);
-    outline-offset: 3px;
-    border-radius: 4px;
-  }
-  .wrap { max-width: 46rem; margin: 0 auto; padding: 0 1.5rem; }
-
-  header.top { padding: 1.5rem 0; border-bottom: 1px solid var(--line); }
-  header.top .wrap { display: flex; justify-content: space-between; align-items: center; gap: 1rem; flex-wrap: wrap; }
-  .brand { font-weight: 800; color: var(--ink); text-decoration: none; letter-spacing: -0.01em; }
-  nav a { margin-left: 1.25rem; color: var(--muted); text-decoration: none; font-size: 0.95rem; }
-  nav a:hover { color: var(--ink); }
-
-  .hero { padding: 4.5rem 0 3.5rem; }
-  .hero h1 {
-    font-size: clamp(2.4rem, 7vw, 3.6rem);
-    line-height: 1.08;
-    letter-spacing: -0.03em;
-    font-weight: 800;
-    margin: 0 0 1rem;
-  }
-  .hero .role { font-size: 1.2rem; color: var(--muted); margin: 0 0 2rem; max-width: 36rem; }
-
-  .viewer { border: 1px solid var(--line); border-radius: 10px; background: var(--surface); overflow: hidden; }
-  .viewer-bar {
-    display: flex; justify-content: space-between; align-items: center;
-    padding: 0.5rem 0.75rem 0.5rem 1rem;
-    border-bottom: 1px solid var(--line);
-    font-family: var(--mono); font-size: 0.8rem; color: var(--muted);
-  }
-  .tabs { display: flex; gap: 0.25rem; }
-  .tabs button {
-    font-family: var(--sans); font-size: 0.85rem; font-weight: 500;
-    color: var(--muted); background: transparent; border: 0;
-    padding: 0.3rem 0.75rem; border-radius: 6px; cursor: pointer;
-  }
-  .tabs button[aria-selected="true"] { background: var(--accent-soft); color: var(--accent); }
-  .pane { padding: 1.25rem 1.25rem 1.4rem; }
-  .pane[hidden] { display: none; }
-  .pane p { margin: 0; max-width: 38rem; }
-  .pane.source { font-family: var(--mono); font-size: 0.82rem; line-height: 1.75; color: var(--muted); overflow-x: auto; }
-  .pane.source pre { margin: 0; white-space: pre-wrap; }
-  .tag { color: var(--accent); }
-
-  .links { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 1.75rem; }
-  .btn {
-    display: inline-block; padding: 0.6rem 1.1rem; border-radius: 8px;
-    font-weight: 700; font-size: 0.95rem; text-decoration: none;
-    border: 1px solid var(--ink); color: var(--ink);
-  }
-  .btn.primary { background: var(--ink); color: var(--bg); }
-  .btn:hover { opacity: 0.85; }
-
-  section { padding: 3rem 0; border-top: 1px solid var(--line); }
-  h2 { font-size: 1.5rem; letter-spacing: -0.02em; margin: 0 0 1.5rem; font-weight: 800; }
-  section p { max-width: 40rem; margin: 0 0 1rem; }
-
-  dl.skills { margin: 0; }
-  dl.skills .row { display: grid; grid-template-columns: 11rem 1fr; gap: 1rem; padding: 0.9rem 0; border-bottom: 1px solid var(--line); }
-  dl.skills .row:last-child { border-bottom: 0; }
-  dl.skills dt { font-weight: 700; }
-  dl.skills dd { margin: 0; color: var(--muted); }
-
-  .item { padding: 1.25rem 0; border-bottom: 1px solid var(--line); }
-  .item:last-child { border-bottom: 0; }
-  .item h3 { margin: 0 0 0.25rem; font-size: 1.1rem; }
-  .item .meta { color: var(--muted); font-size: 0.9rem; margin: 0 0 0.5rem; }
-  .item p { margin: 0; }
-  .item ul { margin: 0.5rem 0 0; padding-left: 1.2rem; max-width: 40rem; }
-  .item li { margin-bottom: 0.35rem; }
-
-  .job { display: grid; grid-template-columns: 9rem 1fr; gap: 1rem; padding: 1.5rem 0; border-bottom: 1px solid var(--line); }
-  .job:last-child { border-bottom: 0; }
-  .job .when { color: var(--muted); font-size: 0.9rem; padding-top: 0.2rem; }
-  .job h3 { margin: 0; font-size: 1.1rem; }
-  .job .org { margin: 0 0 0.5rem; color: var(--muted); font-size: 0.95rem; }
-  .job ul { margin: 0; padding-left: 1.2rem; }
-  .job li { margin-bottom: 0.35rem; }
-
-  footer { padding: 2.5rem 0 3.5rem; border-top: 1px solid var(--line); color: var(--muted); font-size: 0.9rem; }
-
-  @media (max-width: 36rem) {
-    nav a:first-child { margin-left: 0; }
-    dl.skills .row, .job { grid-template-columns: 1fr; gap: 0.15rem; }
-    .hero { padding-top: 3rem; }
-  }
+:root{--paper:#f6f4ef;--surface:#fffefa;--ink:#252923;--muted:#656b61;--line:#dfded5;--green:#526b59;--green-dark:#344c3c;--sage:#e7ece4;--sand:#ede9df;--serif:"Playfair Display",Georgia,serif;--sans:"DM Sans",Arial,sans-serif;--mono:"DM Mono",monospace;--max:1120px}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:90px}body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.7 var(--sans);-webkit-font-smoothing:antialiased}a{color:inherit;text-underline-offset:4px}a:focus-visible,button:focus-visible{outline:3px solid #8aa18d;outline-offset:4px;border-radius:3px}.wrap{width:min(var(--max),calc(100% - 48px));margin:auto}.eyebrow{font:11px var(--mono);letter-spacing:.16em;text-transform:uppercase;color:var(--green)}
+.site-header{position:sticky;top:0;z-index:20;background:rgba(246,244,239,.93);backdrop-filter:blur(14px);border-bottom:1px solid rgba(223,222,213,.85)}.nav{height:76px;display:flex;align-items:center;justify-content:space-between;gap:24px}.brand{font:600 20px var(--serif);text-decoration:none;letter-spacing:-.02em}.nav-links{display:flex;align-items:center;gap:26px}.nav-links a{font-size:13px;color:var(--muted);text-decoration:none}.nav-links a:hover{color:var(--green-dark)}.nav-links .nav-cta{border:1px solid var(--green);color:var(--green-dark);padding:9px 14px;border-radius:3px}.menu-button{display:none;background:none;border:1px solid var(--line);padding:8px 10px;color:var(--ink);font:inherit}
+.hero{padding:100px 0 86px;display:grid;grid-template-columns:1.35fr .65fr;gap:70px;align-items:center}.hero h1{font:600 clamp(48px,7vw,84px)/1.02 var(--serif);letter-spacing:-.045em;margin:20px 0 22px;max-width:760px}.hero h1 em{font-weight:500;color:var(--green);font-style:normal}.hero-lede{font-size:18px;line-height:1.8;color:var(--muted);max-width:660px;margin:0}.hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}.button{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:12px 17px;border:1px solid var(--green);border-radius:3px;text-decoration:none;font-size:13px;font-weight:700;transition:.2s ease}.button.primary{background:var(--green);color:#fff}.button.secondary{color:var(--green-dark)}.button:hover{transform:translateY(-2px);box-shadow:0 7px 18px rgba(37,41,35,.08)}.hero-note{border-left:1px solid var(--green);padding:8px 0 8px 24px}.hero-note strong{display:block;font:500 25px var(--serif);line-height:1.25;margin:10px 0}.hero-note p{color:var(--muted);font-size:14px;margin:0}.hero-note .note-line{height:1px;background:var(--line);margin:22px 0}
+.section{padding:82px 0;border-top:1px solid var(--line)}.section-head{display:flex;justify-content:space-between;align-items:end;gap:30px;margin-bottom:38px}.section-head h2{font:600 clamp(32px,4vw,48px)/1.1 var(--serif);letter-spacing:-.03em;margin:9px 0 0}.section-intro{max-width:430px;color:var(--muted);font-size:14px;margin:0}.strength-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}.strength{background:var(--surface);padding:25px 25px 28px;min-height:190px}.strength .num{font:11px var(--mono);color:var(--green)}.strength h3{font:600 21px var(--serif);margin:20px 0 8px}.strength p{font-size:13px;color:var(--muted);margin:0}
+.skills-layout{display:grid;grid-template-columns:.7fr 1.3fr;gap:75px}.skills-layout>p{color:var(--muted);margin:0;max-width:340px}.skill-list{border-top:1px solid var(--line)}.skill-row{display:grid;grid-template-columns:180px 1fr;gap:25px;padding:17px 0;border-bottom:1px solid var(--line)}.skill-row h3{font-size:13px;margin:0}.skill-row p{font-size:13px;color:var(--muted);margin:0}
+.work-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}.project{background:var(--surface);border:1px solid var(--line);padding:28px;min-height:270px;display:flex;flex-direction:column;position:relative;overflow:hidden}.project:before{content:"";position:absolute;right:-38px;top:-48px;width:130px;height:130px;border-radius:50%;background:var(--sage);opacity:.8}.project-top{display:flex;justify-content:space-between;align-items:center;position:relative}.project-no{font:11px var(--mono);color:var(--green)}.project-type{font:10px var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}.project h3{font:600 27px/1.2 var(--serif);margin:27px 0 10px;position:relative}.project p{font-size:13px;color:var(--muted);margin:0;max-width:470px;position:relative}.project .tools{margin-top:auto;padding-top:24px;font:10px/1.8 var(--mono);letter-spacing:.04em;color:var(--green-dark);position:relative}.project.featured{background:#e9eee7}.project.featured:before{background:#dbe5d9}
+.case-note{display:grid;grid-template-columns:190px 1fr;gap:35px;padding:26px 0 0;margin-top:28px;border-top:1px solid var(--line)}.case-note h3{font:600 20px var(--serif);margin:0}.case-note p{color:var(--muted);font-size:13px;margin:0}
+.timeline{border-top:1px solid var(--line)}.role{display:grid;grid-template-columns:190px 1fr;gap:35px;padding:28px 0;border-bottom:1px solid var(--line)}.role-date{font:11px var(--mono);letter-spacing:.04em;color:var(--green);padding-top:6px}.role h3{font:600 23px var(--serif);margin:0}.role-org{color:var(--muted);font-size:13px;margin:3px 0 14px}.role ul{margin:0;padding-left:18px;max-width:760px}.role li{padding:3px 0;color:#4f554d;font-size:13px}.role li::marker{color:var(--green)}.role-tools{font:10px var(--mono);color:var(--muted);margin-top:14px}
+.education-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}.education-card{padding:23px;background:var(--surface);border:1px solid var(--line)}.education-card h3{font:600 20px var(--serif);margin:0 0 5px}.education-card p{font-size:13px;color:var(--muted);margin:0}.contact{background:var(--green-dark);color:#f8f7f1;border-top:0;padding:76px 0}.contact .eyebrow{color:#c8d5c8}.contact-inner{display:grid;grid-template-columns:1fr auto;gap:40px;align-items:end}.contact h2{font:600 clamp(36px,5vw,58px)/1.08 var(--serif);margin:12px 0}.contact p{color:#d6ded4;max-width:540px;font-size:14px;margin:0}.contact-links{display:flex;flex-direction:column;align-items:flex-start;gap:12px}.contact-links a{color:#fff;font-size:13px}.contact .button{border-color:#d6ded4;color:#fff}.footer{padding:23px 0;color:var(--muted);font:10px var(--mono);letter-spacing:.06em}.footer-inner{display:flex;justify-content:space-between;gap:15px}
+@media(max-width:800px){.hero{grid-template-columns:1fr;gap:40px;padding:76px 0}.hero-note{max-width:470px}.skills-layout{grid-template-columns:1fr;gap:30px}.section{padding:64px 0}.section-head{display:block}.section-intro{margin-top:15px}.strength-grid{grid-template-columns:1fr 1fr}.contact-inner{grid-template-columns:1fr}.contact-links{flex-direction:row;flex-wrap:wrap}.nav-links{gap:16px}}
+@media(max-width:560px){.wrap{width:min(100% - 34px,var(--max))}.nav{height:66px}.menu-button{display:block}.nav-links{display:none;position:absolute;top:65px;left:0;right:0;padding:15px 22px 20px;background:var(--paper);border-bottom:1px solid var(--line);flex-direction:column;align-items:flex-start}.nav-links.open{display:flex}.nav-links a{padding:5px 0}.hero{padding:62px 0}.hero h1{font-size:51px}.hero-lede{font-size:16px}.strength-grid,.work-grid,.education-grid{grid-template-columns:1fr}.strength{min-height:0}.skill-row{grid-template-columns:1fr;gap:5px}.role,.case-note{grid-template-columns:1fr;gap:10px}.role{padding:23px 0}.project{min-height:245px}.section-head h2{font-size:37px}.footer-inner{display:block}.footer-inner span{display:block;margin-top:7px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important}}
 </style>
 </head>
 <body>
-
-<header class="top">
-  <div class="wrap">
-    <a class="brand" href="#top">Rasna Kumai</a>
-    <nav aria-label="Main">
-      <a href="#skills">Skills</a>
-      <a href="#work">Work</a>
-      <a href="#experience">Experience</a>
-      <a href="#contact">Contact</a>
+<header class="site-header">
+  <div class="wrap nav">
+    <a class="brand" href="#top">Rasna Kumai<span aria-hidden="true">.</span></a>
+    <button class="menu-button" type="button" aria-expanded="false" aria-controls="primary-nav">Menu</button>
+    <nav class="nav-links" id="primary-nav" aria-label="Main navigation">
+      <a href="#approach">Approach</a><a href="#expertise">Expertise</a><a href="#work">Selected work</a><a href="#experience">Experience</a><a class="nav-cta" href="#contact">Get in touch ↗</a>
     </nav>
   </div>
 </header>
-
 <main id="top">
   <div class="wrap">
-
-    <div class="hero">
-      <h1>Rasna Kumai</h1>
-      <p class="role">Senior documentation specialist with 10+ years of experience writing and maintaining documentation for enterprise SaaS products.</p>
-
-      <div class="viewer">
-        <div class="viewer-bar">
-          <span>about.dita</span>
-          <div class="tabs" role="tablist" aria-label="View as">
-            <button role="tab" id="tab-result" aria-selected="true" aria-controls="pane-result">Result</button>
-            <button role="tab" id="tab-source" aria-selected="false" aria-controls="pane-source">Source</button>
-          </div>
-        </div>
-        <div class="pane" id="pane-result" role="tabpanel" aria-labelledby="tab-result">
-          <p>I own documentation end to end, from Admin Guides and Release Notes to User Guides and style guides. I lead quality review, mentor new writers, and use AI-assisted workflows to draft and review faster.</p>
-        </div>
-        <div class="pane source" id="pane-source" role="tabpanel" aria-labelledby="tab-source" hidden>
-<pre><span class="tag">&lt;topic</span> id="about"<span class="tag">&gt;</span>
-  <span class="tag">&lt;title&gt;</span>Rasna Kumai<span class="tag">&lt;/title&gt;</span>
-  <span class="tag">&lt;body&gt;</span>
-    <span class="tag">&lt;p&gt;</span>I own documentation end to end, from
-    Admin Guides and Release Notes to User Guides
-    and style guides. I lead quality review, mentor
-    new writers, and use AI-assisted workflows to
-    draft and review faster.<span class="tag">&lt;/p&gt;</span>
-  <span class="tag">&lt;/body&gt;</span>
-<span class="tag">&lt;/topic&gt;</span></pre>
-        </div>
+    <section class="hero" aria-labelledby="hero-title">
+      <div>
+        <div class="eyebrow">Technical writing · Documentation · Content quality</div>
+        <h1 id="hero-title">Making complex work<br><em>clear, useful,</em> and human.</h1>
+        <p class="hero-lede">I'm Rasna, a Senior Technical Writer and Documentation Specialist with 10+ years of experience turning complex enterprise software into clear, reliable documentation and learning experiences.</p>
+        <div class="hero-actions"><a class="button primary" href="#work">Explore selected work <span aria-hidden="true">↘</span></a><a class="button secondary" href="https://www.linkedin.com/in/rasna-kumai-10365278" target="_blank" rel="noopener">Connect on LinkedIn ↗</a></div>
       </div>
-
-      <div class="links">
-        <a class="btn primary" href="#work">See my work</a>
-        <a class="btn" href="https://github.com/RasnaKumai">GitHub profile</a>
-        <a class="btn" href="https://www.linkedin.com/in/rasna-kumai-10365278">LinkedIn</a>
-      </div>
-    </div>
-
-    <section id="skills">
-      <h2>Skills and tools</h2>
-      <dl class="skills">
-        <div class="row">
-          <dt>Authoring</dt>
-          <dd>MadCap Flare, Oxygen XML, Author-IT, Markdown, DocFX, GitHub, Visual Studio Code, MS Word</dd>
-        </div>
-        <div class="row">
-          <dt>AI-assisted writing</dt>
-          <dd>Claude AI, ChatGPT Pro, GitHub Copilot, Microsoft Copilot</dd>
-        </div>
-        <div class="row">
-          <dt>Deliverables</dt>
-          <dd>Admin Guides, User Guides, Release Notes, online help, style guides, video tutorials</dd>
-        </div>
-        <div class="row">
-          <dt>Media and design</dt>
-          <dd>Captivate, Camtasia, SnagIt, Canva</dd>
-        </div>
-        <div class="row">
-          <dt>Process</dt>
-          <dd>Agile, JIRA, quality review, cross-team collaboration, team mentoring</dd>
-        </div>
-      </dl>
+      <aside class="hero-note" aria-label="Professional focus">
+        <div class="eyebrow">What I bring</div>
+        <strong>Thoughtful content. Strong process. Better documentation.</strong>
+        <p>From planning and authoring to quality review and release, I care about making information accurate, consistent and maintainable.</p>
+        <div class="note-line"></div>
+        <p><b>10+ years</b> across enterprise software and technical communication</p>
+      </aside>
     </section>
-
-    <section id="work">
-      <h2>Selected work</h2>
-      <div class="item">
-        <h3>Festival of Learning</h3>
-        <p class="meta">Documentation newsletter series · Markdown, GitHub, DocFX, SharePoint</p>
-        <p>Conceived and produced a documentation newsletter series that ran for 5 to 6 weeks, then compiled it into a single-page interactive design.</p>
-      </div>
-      <div class="item">
-        <h3>Documentation style guide</h3>
-        <p class="meta">Team standard · WiseTech Global</p>
-        <p>Authored and maintained the team’s style guide, which keeps wording and structure consistent across every deliverable.</p>
-      </div>
-      <div class="item">
-        <h3>Release training and “How do I” videos</h3>
-        <p class="meta">Video tutorials · Captivate, Camtasia, SnagIt</p>
-        <p>Produced instructional and release-training videos for end users at WiseTech Global and Infor.</p>
-      </div>
-      <div class="item">
-        <h3>Interactive online help</h3>
-        <p class="meta">Online help · WiseTech Global</p>
-        <p>Expanded documentation into online and interactive help formats for WiseTech Global products.</p>
+    <section class="section" id="approach">
+      <div class="section-head"><div><div class="eyebrow">Beyond the page</div><h2>How I contribute</h2></div><p class="section-intro">Good documentation takes more than clear sentences. It takes an understanding of users, products, people and the process that keeps information trustworthy.</p></div>
+      <div class="strength-grid">
+        <article class="strength"><div class="num">01 / OWNERSHIP</div><h3>End-to-end documentation</h3><p>Planning, researching, authoring, reviewing and maintaining documentation across product releases.</p></article>
+        <article class="strength"><div class="num">02 / QUALITY</div><h3>Consistency by design</h3><p>Style guidance, terminology, editorial review and quality checks that help teams deliver reliable content.</p></article>
+        <article class="strength"><div class="num">03 / PEOPLE</div><h3>Collaboration and mentoring</h3><p>Working with product and engineering teams, supporting colleagues and sharing practical documentation knowledge.</p></article>
       </div>
     </section>
-
-    <section id="experience">
-      <h2>Experience</h2>
-
-      <div class="job">
-        <div class="when">Jun 2022 – May 2026</div>
-        <div>
-          <h3>Senior Documentation Specialist</h3>
-          <p class="org">WiseTech Global (formerly Blume Global, acquired in 2024)</p>
-          <ul>
-            <li>Owned documentation for Resource Selection, Contract Management, and Asset Optimization, including Admin Guides, Release Notes, and User Guides.</li>
-            <li>Led quality review of the whole team’s output before release.</li>
-            <li>Mentored junior writers and new team members on the Documentation Development Life Cycle.</li>
-            <li>Partnered with an overseas team to edit and proofread documentation for a new Customs product.</li>
-            <li>Managed tasks and stories in JIRA under Agile methodology.</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="job">
-        <div class="when">Feb 2021 – Jun 2022</div>
-        <div>
-          <h3>Technical Writer</h3>
-          <p class="org">Infor (India) Pvt. Limited</p>
-          <ul>
-            <li>Solely owned documentation for the Factory Management product line.</li>
-            <li>Created release-training and “How do I” videos for end users.</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="job">
-        <div class="when">Oct 2019 – Feb 2021</div>
-        <div>
-          <h3>Technical Writer</h3>
-          <p class="org">Transcend Creative Services, for Hewlett Packard Enterprise</p>
-          <ul>
-            <li>Created, edited, and delivered technical documents across multiple HPE projects.</li>
-            <li>Worked with developers and engineers on migration and documentation for the Aruba Switch product line.</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="job">
-        <div class="when">Aug 2016 – Oct 2019</div>
-        <div>
-          <h3>Technical Writer</h3>
-          <p class="org">Blue Yonder, Inc. (JDA Software)</p>
-          <ul>
-            <li>Wrote Administrator Guides, Release Notes, Online Help, and User Guides.</li>
-            <li>Solely owned documentation for Factory Planner and also documented Web Commerce.</li>
-            <li>Authored in Author-IT and MadCap Flare, working with developers and functional architects.</li>
-            <li>Received a Spot Award for consistent quarterly deliveries.</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="job">
-        <div class="when">Jan 2016 – Aug 2016</div>
-        <div>
-          <h3>Content Developer</h3>
-          <p class="org">InfoCognitio Solutions Private Limited</p>
-          <ul>
-            <li>Created and edited content for the travel and food and beverage sectors, including websites and social media for clients such as Yatra and Cleartrip.</li>
-          </ul>
+    <section class="section" id="expertise">
+      <div class="section-head"><div><div class="eyebrow">Capabilities</div><h2>Tools and expertise</h2></div></div>
+      <div class="skills-layout">
+        <p>My work sits at the intersection of technical content, structured authoring and documentation operations. I choose tools to support clarity, collaboration and maintainability.</p>
+        <div class="skill-list">
+          <div class="skill-row"><h3>Technical content</h3><p>Admin Guides, User Guides, Release Notes, online help, style guides, training and instructional videos</p></div>
+          <div class="skill-row"><h3>Structured authoring</h3><p>Markdown, Oxygen XML, MadCap Flare, Author-IT, DocFX, Microsoft Word</p></div>
+          <div class="skill-row"><h3>Docs as Code</h3><p>GitHub, Visual Studio Code, Git-based review workflows, content migration and publishing</p></div>
+          <div class="skill-row"><h3>AI-assisted authoring</h3><p>Claude AI, ChatGPT Pro, GitHub Copilot, Microsoft Copilot; drafting and review supported by human checks</p></div>
+          <div class="skill-row"><h3>Media and learning</h3><p>Adobe Captivate, Camtasia, SnagIt, Canva; video tutorials and user-focused learning content</p></div>
+          <div class="skill-row"><h3>Ways of working</h3><p>Agile, JIRA, stakeholder collaboration, editorial quality review, mentoring and process improvement</p></div>
         </div>
       </div>
     </section>
-
-    <section id="education">
-      <h2>Education and certifications</h2>
-      <div class="item">
-        <h3>Bachelor of Arts: Economics, Sociology, History, English</h3>
-        <p class="meta">University of Bangalore, Mount Carmel College</p>
+    <section class="section" id="work">
+      <div class="section-head"><div><div class="eyebrow">Selected work</div><h2>Projects with purpose</h2></div><p class="section-intro">A selection of documentation, content design and learning work. The summaries describe my role and the work involved without sharing confidential product information.</p></div>
+      <div class="work-grid">
+        <article class="project featured"><div class="project-top"><span class="project-no">01</span><span class="project-type">Content strategy · Migration</span></div><h3>Festival of Learning</h3><p>Conceived and produced a 5–6 week documentation newsletter series, then brought the material together as a single-page interactive learning resource.</p><div class="tools">MARKDOWN / GITHUB / DOCFX / SHAREPOINT</div></article>
+        <article class="project"><div class="project-top"><span class="project-no">02</span><span class="project-type">Content governance</span></div><h3>Documentation style guide</h3><p>Authored and maintained a team style guide to standardise terminology, structure and writing conventions across documentation deliverables.</p><div class="tools">EDITORIAL STANDARDS / TERMINOLOGY / QUALITY</div></article>
+        <article class="project"><div class="project-top"><span class="project-no">03</span><span class="project-type">Learning content</span></div><h3>Release Training and “How do I” videos</h3><p>Produced release-training and task-based instructional videos to help end users understand product workflows and adopt new features.</p><div class="tools">CAPTIVATE / CAMTASIA / SNAGIT</div></article>
+        <article class="project"><div class="project-top"><span class="project-no">04</span><span class="project-type">Product documentation</span></div><h3>Interactive online help</h3><p>Expanded product documentation into online and interactive help formats as part of the post-acquisition documentation transition.</p><div class="tools">ONLINE HELP / CONTENT STRUCTURE / USER SUPPORT</div></article>
       </div>
-      <div class="item">
-        <h3>Certificate in Political Journalism</h3>
-      </div>
-      <div class="item">
-        <h3>Diploma in Human Rights</h3>
+      <div class="case-note"><h3>A note on samples</h3><p>Some work was created for proprietary enterprise products and cannot be published publicly. Project summaries are provided to show the scope of my contribution while respecting confidentiality. Additional redacted or recreated samples can be shared where appropriate.</p></div>
+    </section>
+    <section class="section" id="experience">
+      <div class="section-head"><div><div class="eyebrow">Career</div><h2>Professional experience</h2></div><p class="section-intro">Over a decade of technical communication across enterprise software, product documentation and content development.</p></div>
+      <div class="timeline">
+        <article class="role"><div class="role-date">JUN 2022 — MAY 2026</div><div><h3>Senior Documentation Specialist</h3><p class="role-org">WiseTech Global · formerly Blume Global, acquired in 2024</p><ul><li>Owned the documentation lifecycle for 3–4 core products, including Resource Selection, Contract Management and Asset Optimization, delivering Admin Guides, User Guides and Release Notes across multiple releases.</li><li>Authored and maintained the team documentation style guide to standardise terminology and structure.</li><li>Led pre-release quality reviews across the documentation team's output.</li><li>Mentored three junior writers and new team members on the Documentation Development Life Cycle.</li><li>Partnered with an overseas team to edit and proofread documentation for a new Customs product.</li><li>Conceptualised and produced Festival of Learning, a 5–6 week documentation newsletter series, compiled into a single-page interactive design using Markdown, GitHub, DocFX and SharePoint.</li><li>Expanded product documentation into online and interactive help formats; managed tasks and stories in JIRA under Agile methodology.</li><li>Produced release-training and “How do I” videos using Captivate and Camtasia; used AI-assisted authoring tools with human quality checks.</li></ul><div class="role-tools">TOOLS: OXYGEN XML · MARKDOWN · GITHUB · DOCFX · VS CODE · JIRA · CAPTIVATE · CAMTASIA · AI TOOLS</div></div></article>
+        <article class="role"><div class="role-date">FEB 2021 — JUN 2022</div><div><h3>Technical Writer</h3><p class="role-org">Infor (India) Pvt. Limited</p><ul><li>Solely owned documentation for the Factory Management product line.</li><li>Created 10–20 release-training and “How do I do this” instructional videos for end users.</li><li>Authored a User Guide from scratch for the Quality Assurance application, initially launched for iPad.</li><li>Produced video content using Captivate and supporting imagery using SnagIt.</li></ul><div class="role-tools">TOOLS: CAPTIVATE · SNAGIT</div></div></article>
+        <article class="role"><div class="role-date">OCT 2019 — FEB 2021</div><div><h3>Technical Writer</h3><p class="role-org">Transcend Creative Services · for Hewlett Packard Enterprise</p><ul><li>Created, edited and delivered technical documentation across multiple HPE projects.</li><li>Collaborated with developers and engineers to identify and resolve documentation gaps.</li><li>Handled migration and documentation tasks for Aruba Networks’ Aruba Switch product line.</li></ul></div></article>
+        <article class="role"><div class="role-date">AUG 2016 — OCT 2019</div><div><h3>Technical Writer</h3><p class="role-org">Blue Yonder, Inc. · JDA Software</p><ul><li>Created Administrator Guides, Release Notes, Online Help and User Guides.</li><li>Solely owned documentation for the Factory Planner product and also documented Web Commerce.</li><li>Worked with developers and functional architects using Author-IT and MadCap Flare.</li><li>Received a JDA Spot Award for consistent work and successful quarterly deliveries.</li></ul><div class="role-tools">TOOLS: AUTHOR-IT · MADCAP FLARE</div></div></article>
+        <article class="role"><div class="role-date">JAN 2016 — AUG 2016</div><div><h3>Content Developer</h3><p class="role-org">InfoCognitio Solutions Private Limited · Bangalore</p><ul><li>Edited and created content for the travel and food and beverage sectors, including on-site client work.</li><li>Developed website and social media content for platforms including Nearbuy, Yatra and Cleartrip.</li></ul></div></article>
       </div>
     </section>
-
-    <section id="contact">
-      <h2>Contact</h2>
-      <p>Open to documentation roles and projects. Email is the best way to reach me.</p>
-      <p>
-        <a href="mailto:rasnakumai@gmail.com">rasnakumai@gmail.com</a><br>
-        <a href="https://www.linkedin.com/in/rasna-kumai-10365278">LinkedIn</a><br>
-        <a href="https://github.com/RasnaKumai">GitHub</a>
-      </p>
+    <section class="section" id="education">
+      <div class="section-head"><div><div class="eyebrow">Education</div><h2>Learning and foundations</h2></div></div>
+      <div class="education-grid">
+        <article class="education-card"><h3>Bachelor of Arts</h3><p>Economics, Sociology, History and English<br>University of Bangalore · Mount Carmel College</p></article>
+        <article class="education-card"><h3>Additional qualifications</h3><p>Certificate in Political Journalism<br>Diploma in Human Rights</p></article>
+      </div>
     </section>
-
   </div>
+  <section class="contact" id="contact"><div class="wrap contact-inner"><div><div class="eyebrow">Let's connect</div><h2>Good work starts<br>with a conversation.</h2><p>For technical writing opportunities, documentation projects or a conversation about content and information development, feel free to get in touch.</p></div><div class="contact-links"><a class="button" href="mailto:rasnakumai@gmail.com">Email me ↗</a><a href="https://www.linkedin.com/in/rasna-kumai-10365278" target="_blank" rel="noopener">LinkedIn ↗</a><a href="https://github.com/RasnaKumai" target="_blank" rel="noopener">GitHub ↗</a></div></div></section>
 </main>
-
-<footer>
-  <div class="wrap">© 2026 Rasna Kumai</div>
-</footer>
-
+<footer class="footer"><div class="wrap footer-inner"><span>© 2026 Rasna Kumai</span><span>Thoughtful documentation, built with care.</span></div></footer>
 <script>
-  (function () {
-    var tabs = document.querySelectorAll('.tabs button');
-    var panes = { 'tab-result': document.getElementById('pane-result'),
-                  'tab-source': document.getElementById('pane-source') };
-    tabs.forEach(function (tab) {
-      tab.addEventListener('click', function () {
-        tabs.forEach(function (t) {
-          var on = t === tab;
-          t.setAttribute('aria-selected', on ? 'true' : 'false');
-          panes[t.id].hidden = !on;
-        });
-      });
-    });
-  })();
+(function(){var button=document.querySelector('.menu-button');var nav=document.getElementById('primary-nav');if(!button||!nav)return;button.addEventListener('click',function(){var open=nav.classList.toggle('open');button.setAttribute('aria-expanded',String(open));});nav.addEventListener('click',function(event){if(event.target.closest('a')){nav.classList.remove('open');button.setAttribute('aria-expanded','false');}});})();
 </script>
 </body>
 </html>
